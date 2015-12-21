@@ -29,10 +29,18 @@
 (el-get-bundle emacs-powerline
   (setq powerline-arrow-shape 'arrow))
 
+;;-------------------------------------------
 ;; General configs
+;;-------------------------------------------
 (setq backup-directory-alist `(("." . "~/.emacs-backup-files")))
 (add-to-list 'custom-theme-load-path (expand-file-name "themes" user-emacs-directory))
 (load-theme 'gruvbox t)
+
+;; Remove annoying startup message
+(setq inhibit-startup-message t)
+
+;; Starts with maximized window
+(toggle-frame-maximized)
 
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -43,7 +51,9 @@
 
 ;; Define keybindings
 (define-key evil-normal-state-map (kbd "H") 'evil-beginning-of-line)
+(define-key evil-visual-state-map (kbd "H") 'evil-beginning-of-line)
 (define-key evil-normal-state-map (kbd "L") 'evil-end-of-line)
+(define-key evil-visual-state-map (kbd "L") 'evil-end-of-line)
 
 (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
 (define-key evil-visual-state-map (kbd "C-u") 'evil-scroll-up)
