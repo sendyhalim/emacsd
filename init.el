@@ -23,10 +23,14 @@
 
 (el-get-bundle flycheck)
 
+(el-get-bundle company-mode
+  (company-mode 1))
+
 (el-get-bundle emacs-powerline
   (setq powerline-arrow-shape 'arrow))
 
 ;; General configs
+(setq backup-directory-alist `(("." . "~/.emacs-backup-files")))
 (add-to-list 'custom-theme-load-path (expand-file-name "themes" user-emacs-directory))
 (load-theme 'gruvbox t)
 
