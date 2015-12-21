@@ -51,4 +51,3 @@
   (lambda ()
     (interactive)
     (evil-delete (point-at-bol) (point))))
-
