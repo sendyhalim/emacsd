@@ -34,6 +34,9 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
+;; Hide toolbar
+(tool-bar-mode 0)
+
 ;; Define keybindings
 (define-key evil-normal-state-map (kbd "H") 'evil-beginning-of-line)
 (define-key evil-normal-state-map (kbd "L") 'evil-end-of-line)
