@@ -46,7 +46,7 @@
 ;; ------------------------------------------
 (setq mac-option-modifier 'meta)
 (setq mac-command-modifier 'super) ;; This is needed to support simpleclip
-(setq backup-directory-alist `(("." . "~/.Emacs-backup-files")))
+(setq backup-directory-alist `(("." . "~/.emacs-backup-files")))
 
 (add-to-list 'custom-theme-load-path (expand-file-name "themes" user-emacs-directory))
 (load-theme 'gruvbox t)
