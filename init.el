@@ -41,7 +41,7 @@
 (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
 (define-key evil-visual-state-map (kbd "C-u") 'evil-scroll-up)
 (define-key evil-insert-state-map (kbd "C-u")
-            (lambda ()
-              (interactive)
-              (evil-delete (point-at-bol) (point))))
+  (lambda ()
+    (interactive)
+    (evil-delete (point-at-bol) (point))))
 
