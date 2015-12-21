@@ -19,6 +19,7 @@
 ;; Packages
 (el-get-bundle evil
   (evil-mode 1))
+(el-get-bundle evil-numbers)
 
 (el-get-bundle neotree
   (global-set-key [f8] 'neotree-toggle))
@@ -42,10 +43,13 @@
 ;; General configs
 ;; ------------------------------------------
 (setq mac-option-modifier 'meta)
+(setq mac-command-modifier 'super) ;; This is needed to support simpleclip
 (setq backup-directory-alist `(("." . "~/.Emacs-backup-files")))
 
 (add-to-list 'custom-theme-load-path (expand-file-name "themes" user-emacs-directory))
 (load-theme 'gruvbox t)
+
+(global-linum-mode t)
 
 ;; Hide toolbar
 (tool-bar-mode 0)
@@ -64,3 +68,6 @@
   (lambda ()
     (interactive)
     (evil-delete (point-at-bol) (point))))
+
+(define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
+(define-key evil-normal-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
