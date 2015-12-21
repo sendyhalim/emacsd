@@ -20,6 +20,8 @@
 (el-get-bundle evil
   (evil-mode 1))
 (el-get-bundle evil-numbers)
+(el-get-bundle evil-leader)
+(el-get-bundle evil-nerd-commenter)
 
 (el-get-bundle neotree
   (global-set-key [f8] 'neotree-toggle))
@@ -71,3 +73,5 @@
 
 (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
 (define-key evil-normal-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
+
+(define-key evil-normal-state-map (kbd "C-c") 'evilnc-comment-or-uncomment-lines)
